@@ -124,7 +124,7 @@ namespace AyuSwastha.Data
                         Name = Convert.ToString(r["Name"]),
                         Description = r["Description"] == DBNull.Value ? null : Convert.ToString(r["Description"]),
                         DurationMinutes = Convert.ToInt32(r["DurationMinutes"]),
-                        Price = Convert.ToDouble(r["Price"])
+                        Price = Convert.ToDecimal(r["Price"])
                     });
             }
             catch (Exception ex)
@@ -160,7 +160,7 @@ namespace AyuSwastha.Data
                 PatientId = Convert.ToInt32(r["PatientId"]),
                 DoctorId = r["DoctorId"] == DBNull.Value ? (int?)null : Convert.ToInt32(r["DoctorId"]),
                 ScheduledAt = DateTime.Parse(Convert.ToString(r["ScheduledAt"])),
-                Status = (AppointmentStatus)Convert.ToInt32(r["Status"]),
+                Status = (TherapyStatus)Convert.ToInt32(r["Status"]),
                 Notes = r["Notes"] == DBNull.Value ? null : Convert.ToString(r["Notes"]),
                 TherapyName = Convert.ToString(r["TherapyName"]),
                 PatientName = Convert.ToString(r["PatientName"]),

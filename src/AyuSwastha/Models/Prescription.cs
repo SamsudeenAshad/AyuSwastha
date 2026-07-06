@@ -14,6 +14,10 @@ namespace AyuSwastha.Models
         public int DoctorId { get; set; }
         public DateTime IssuedOn { get; set; } = DateTime.Today;
         public string GeneralInstructions { get; set; }
+        
+        // Display helpers
+        public string PatientName { get; set; }
+        public string DoctorName { get; set; }
 
         public List<PrescriptionItem> Items { get; } = new List<PrescriptionItem>();
 

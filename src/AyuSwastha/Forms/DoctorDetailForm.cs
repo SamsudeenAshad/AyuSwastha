@@ -195,7 +195,7 @@ namespace AyuSwastha.Forms
                 _doctor.Address = txtAddress.Text.Trim();
                 _doctor.Specialization = txtSpecialization.Text.Trim();
                 _doctor.LicenseNo = txtLicense.Text.Trim();
-                if (double.TryParse(txtFee.Text, out double fee))
+                if (decimal.TryParse(txtFee.Text, out decimal fee))
                     _doctor.ConsultationFee = fee;
                 else
                     throw new ValidationException("Consultation Fee must be a valid number.");

@@ -16,5 +16,6 @@ namespace AyuSwastha.Models
         // Display helpers populated via joins.
         public string TherapyName { get; set; }
         public string PatientName { get; set; }
+        public string DoctorName { get; set; }
     }
 }

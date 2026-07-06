@@ -142,7 +142,7 @@ namespace AyuSwastha.Forms
             txtNotes = new TextBox { Width = 260, Multiline = true, Height = 80, Font = Theme.Body };
             
             cmbStatus = new ComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Width = 150, Font = Theme.Body };
-            cmbStatus.DataSource = Enum.GetValues(typeof(AppointmentStatus));
+            cmbStatus.DataSource = Enum.GetValues(typeof(TherapyStatus));
 
             int y = 20;
             AddRow(body, "Therapy", cmbTherapy, ref y);
@@ -195,7 +195,7 @@ namespace AyuSwastha.Forms
                 _session.DoctorId = docId > 0 ? (int?)docId : null;
 
                 _session.ScheduledAt = dtpDate.Value.Date.Add(dtpTime.Value.TimeOfDay);
-                _session.Status = (AppointmentStatus)cmbStatus.SelectedItem;
+                _session.Status = (TherapyStatus)cmbStatus.SelectedItem;
                 _session.Notes = txtNotes.Text.Trim();
 
                 if (_session.Id == 0) _repo.Add(_session);
