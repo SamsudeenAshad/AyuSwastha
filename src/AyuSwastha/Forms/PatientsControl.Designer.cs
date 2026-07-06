@@ -214,26 +214,26 @@ namespace AyuSwastha.Forms
             //
             // Address (multiline)
             //
-            Label(this.lblAddress, "Address", 236);
+            SetLabel(this.lblAddress, "Address", 236);
             this.txtAddress.Location = new Point(150, 234); this.txtAddress.Size = new Size(330, 46);
             this.txtAddress.Multiline = true; this.txtAddress.Font = Theme.Body;
             //
             SetField(this.lblPrakriti, "Prakriti (Dosha)", this.cmbPrakriti, 300); this.cmbPrakriti.Width = 200;
             this.cmbPrakriti.DropDownStyle = ComboBoxStyle.DropDownList;
             //
-            Label(this.lblHistory, "Medical History", 340);
+            SetLabel(this.lblHistory, "Medical History", 340);
             this.txtHistory.Location = new Point(150, 338); this.txtHistory.Size = new Size(330, 46);
             this.txtHistory.Multiline = true; this.txtHistory.Font = Theme.Body;
             //
-            Label(this.lblAllergies, "Allergies", 396);
+            SetLabel(this.lblAllergies, "Allergies", 396);
             this.txtAllergies.Location = new Point(150, 394); this.txtAllergies.Size = new Size(330, 40);
             this.txtAllergies.Multiline = true; this.txtAllergies.Font = Theme.Body;
             //
-            Label(this.lblLifestyle, "Lifestyle", 446);
+            SetLabel(this.lblLifestyle, "Lifestyle", 446);
             this.txtLifestyle.Location = new Point(150, 444); this.txtLifestyle.Size = new Size(330, 40);
             this.txtLifestyle.Multiline = true; this.txtLifestyle.Font = Theme.Body;
             //
-            Label(this.lblNotes, "Notes", 496);
+            SetLabel(this.lblNotes, "Notes", 496);
             this.txtNotes.Location = new Point(150, 494); this.txtNotes.Size = new Size(330, 46);
             this.txtNotes.Multiline = true; this.txtNotes.Font = Theme.Body;
             //
