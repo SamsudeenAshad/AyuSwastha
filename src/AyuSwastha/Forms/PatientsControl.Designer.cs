@@ -261,7 +261,7 @@ namespace AyuSwastha.Forms
         }
 
         // Helpers to keep the row layout terse and consistent.
-        private void Label(Label lbl, string text, int y)
+        private void SetLabel(Label lbl, string text, int y)
         {
             lbl.AutoSize = true;
             lbl.Font = Theme.Body;
@@ -270,9 +270,9 @@ namespace AyuSwastha.Forms
             lbl.Text = text;
         }
 
-        private void Field(Label lbl, string text, Control input, int y)
+        private void SetField(Label lbl, string text, Control input, int y)
         {
-            Label(lbl, text, y + 4);
+            SetLabel(lbl, text, y + 4);
             input.Location = new Point(150, y);
             input.Font = Theme.Body;
         }
