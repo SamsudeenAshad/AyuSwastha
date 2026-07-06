@@ -133,11 +133,13 @@ namespace AyuSwastha.Forms
         /// <summary>Applies the shared look to a sidebar button and wires its click.</summary>
         private void ConfigureNavButton(Button b, string text, int index, string key)
         {
+            b.Text = text;
             b.Dock = DockStyle.Top;
             b.Height = 46;
             b.FlatStyle = FlatStyle.Flat;
             b.FlatAppearance.BorderSize = 0;
             b.TextAlign = ContentAlignment.MiddleLeft;
+            b.Padding = new Padding(12, 0, 0, 0);
             b.Font = new Font("Segoe UI", 10.5f);
             b.ForeColor = Theme.TextPrimary;
             b.BackColor = Theme.SidebarBg;
