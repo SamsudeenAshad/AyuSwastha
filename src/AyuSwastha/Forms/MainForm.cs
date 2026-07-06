@@ -54,8 +54,7 @@ namespace AyuSwastha.Forms
                     view = new PrescriptionsControl();
                     break;
                 case "billing":
-                    view = new PlaceholderControl("Billing",
-                        "Generate invoices for consultations, therapies and herbal medicines.");
+                    view = new BillingControl();
                     break;
                 case "doctors":
                     view = new DoctorsControl();
