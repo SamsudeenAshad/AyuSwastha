@@ -108,11 +108,11 @@ namespace AyuSwastha.Services
             }
         }
 
-        private static DoshaRecommendation Combine(DoshaRecommendation a, DoshaRecommendation b, string summary)
+        private static DoshaRecommendation Combine(DoshaType dosha, DoshaRecommendation a, DoshaRecommendation b, string summary)
         {
             return new DoshaRecommendation
             {
-                Dosha = DoshaType.Unknown, // caller supplies the real dual value via context
+                Dosha = dosha,
                 Summary = summary,
                 RecommendedHerbs = Merge(a.RecommendedHerbs, b.RecommendedHerbs),
                 RecommendedTherapies = Merge(a.RecommendedTherapies, b.RecommendedTherapies),
