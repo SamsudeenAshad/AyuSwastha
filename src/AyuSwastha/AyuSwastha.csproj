@@ -106,6 +106,15 @@
     <Compile Include="Forms\DoctorDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\AppointmentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AppointmentsControl.Designer.cs">
+      <DependentUpon>AppointmentsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AppointmentDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\PatientDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -45,8 +45,7 @@ namespace AyuSwastha.Forms
                     view = new PatientsControl();
                     break;
                 case "appointments":
-                    view = new PlaceholderControl("Appointment Booking",
-                        "Book, reschedule and track patient appointments with doctors.");
+                    view = new AppointmentsControl();
                     break;
                 case "therapy":
                     view = new PlaceholderControl("Therapy Schedule",
@@ -61,8 +60,7 @@ namespace AyuSwastha.Forms
                         "Generate invoices for consultations, therapies and herbal medicines.");
                     break;
                 case "doctors":
-                    view = new PlaceholderControl("Doctors",
-                        "Manage doctor profiles, specializations and availability.");
+                    view = new DoctorsControl();
                     break;
                 default:
                     view = new PlaceholderControl("Coming soon", "This module is not available yet.");
