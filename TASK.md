@@ -2,7 +2,7 @@
 
 > **Course:** Object Oriented Programming with C#
 > **Domain:** Traditional Sri Lankan Ayurvedic practice management
-> **Stack:** C# · WPF · .NET 8 (Windows) · SQLite (via `Microsoft.Data.Sqlite`)
+> **Stack:** C# · Windows Forms · .NET Framework 4.8 · SQLite (via `System.Data.SQLite`)
 
 The system manages patient profiles, herbal prescriptions, therapy schedules,
 appointments, billing, and doctors — with a strong emphasis on OOP design,
@@ -29,8 +29,8 @@ the practitioner.
 ## Milestones
 
 ### M1 — Foundation
-- [ ] Solution + WPF project skeleton (`AyuSwastha.sln`)
-- [ ] Global green theme / styles (`App.xaml`)
+- [ ] Solution + WinForms project skeleton (`AyuSwastha.sln`)
+- [ ] Shared green theme / colors (`Core/Theme.cs`)
 - [ ] SQLite database bootstrap + schema + seed data (`Data/Database.cs`)
 - [ ] Base OOP model layer (`Person` → `Patient` / `Doctor`, enums)
 
@@ -84,13 +84,17 @@ the practitioner.
 `Bill` + `BillItem`
 
 ## Build & Run
-```bash
-# from repo root
-dotnet restore
-dotnet build
-dotnet run --project src/AyuSwastha
+1. Open `AyuSwastha.sln` in **Visual Studio 2019/2022** on **Windows**.
+2. Restore NuGet packages (`System.Data.SQLite.Core` restores automatically).
+3. Set **AyuSwastha** as the startup project and press **F5**.
+
+Or from a Developer Command Prompt:
+```bat
+nuget restore AyuSwastha.sln
+msbuild AyuSwastha.sln /p:Configuration=Debug
+src\AyuSwastha\bin\Debug\AyuSwastha.exe
 ```
-> Requires the **.NET 8 SDK** on **Windows** (WPF is Windows-only).
+> Targets **.NET Framework 4.8** (ships with Windows 10/11).
 > First launch creates `AyuSwastha.db` and seeds a default admin — see README.
 
 ## Default Login (seed)
