@@ -195,9 +195,9 @@ namespace AyuSwastha.Forms
             //
             // rows
             //
-            Field(this.lblCode, "Patient ID", this.txtCode, 56); this.txtCode.ReadOnly = true; this.txtCode.Width = 140;
-            Field(this.lblName, "Full Name", this.txtName, 92); this.txtName.Width = 330;
-            Field(this.lblGender, "Gender", this.cmbGender, 128); this.cmbGender.Width = 150;
+            SetField(this.lblCode, "Patient ID", this.txtCode, 56); this.txtCode.ReadOnly = true; this.txtCode.Width = 140;
+            SetField(this.lblName, "Full Name", this.txtName, 92); this.txtName.Width = 330;
+            SetField(this.lblGender, "Gender", this.cmbGender, 128); this.cmbGender.Width = 150;
             this.cmbGender.DropDownStyle = ComboBoxStyle.DropDownList;
             //
             // Age (shares the Gender row, to the right)
@@ -208,9 +208,9 @@ namespace AyuSwastha.Forms
             this.lblAgeValue.ForeColor = Theme.TextPrimary; this.lblAgeValue.Location = new Point(360, 132);
             this.lblAgeValue.Text = "—";
             //
-            Field(this.lblDob, "Date of Birth", this.dtpDob, 164); this.dtpDob.Width = 200;
+            SetField(this.lblDob, "Date of Birth", this.dtpDob, 164); this.dtpDob.Width = 200;
             this.dtpDob.Format = DateTimePickerFormat.Short; this.dtpDob.ShowCheckBox = true;
-            Field(this.lblPhone, "Phone", this.txtPhone, 200); this.txtPhone.Width = 200;
+            SetField(this.lblPhone, "Phone", this.txtPhone, 200); this.txtPhone.Width = 200;
             //
             // Address (multiline)
             //
@@ -218,7 +218,7 @@ namespace AyuSwastha.Forms
             this.txtAddress.Location = new Point(150, 234); this.txtAddress.Size = new Size(330, 46);
             this.txtAddress.Multiline = true; this.txtAddress.Font = Theme.Body;
             //
-            Field(this.lblPrakriti, "Prakriti (Dosha)", this.cmbPrakriti, 300); this.cmbPrakriti.Width = 200;
+            SetField(this.lblPrakriti, "Prakriti (Dosha)", this.cmbPrakriti, 300); this.cmbPrakriti.Width = 200;
             this.cmbPrakriti.DropDownStyle = ComboBoxStyle.DropDownList;
             //
             Label(this.lblHistory, "Medical History", 340);
