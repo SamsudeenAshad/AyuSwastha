@@ -77,13 +77,13 @@ namespace AyuSwastha.Services
                         LifestyleTips = new[] { "Vigorous daily exercise", "Rise early; avoid daytime sleep", "Seek variety and stimulation" }
                     };
                 case DoshaType.VataPitta:
-                    return Combine(GetRecommendation(DoshaType.Vata), GetRecommendation(DoshaType.Pitta),
+                    return Combine(dosha, GetRecommendation(DoshaType.Vata), GetRecommendation(DoshaType.Pitta),
                         "Vata-Pitta: balance grounding with cooling; adjust to the season.");
                 case DoshaType.PittaKapha:
-                    return Combine(GetRecommendation(DoshaType.Pitta), GetRecommendation(DoshaType.Kapha),
+                    return Combine(dosha, GetRecommendation(DoshaType.Pitta), GetRecommendation(DoshaType.Kapha),
                         "Pitta-Kapha: favour cooling and light, stimulating routines.");
                 case DoshaType.VataKapha:
-                    return Combine(GetRecommendation(DoshaType.Vata), GetRecommendation(DoshaType.Kapha),
+                    return Combine(dosha, GetRecommendation(DoshaType.Vata), GetRecommendation(DoshaType.Kapha),
                         "Vata-Kapha: keep warm and active; avoid cold and heaviness.");
                 case DoshaType.Tridoshic:
                     return new DoshaRecommendation
