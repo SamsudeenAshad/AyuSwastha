@@ -150,22 +150,26 @@ CREATE TABLE IF NOT EXISTS PrescriptionItems (
     FOREIGN KEY (PrescriptionId) REFERENCES Prescriptions(Id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS Bills (
+CREATE TABLE IF NOT EXISTS Invoices (
     Id         INTEGER PRIMARY KEY AUTOINCREMENT,
     PatientId  INTEGER NOT NULL,
-    IssuedOn   TEXT    NOT NULL,
+    IssuedAt   TEXT    NOT NULL,
     Status     INTEGER NOT NULL DEFAULT 0,
-    AmountPaid REAL    NOT NULL DEFAULT 0,
+    SubTotal   REAL    NOT NULL DEFAULT 0,
+    Tax        REAL    NOT NULL DEFAULT 0,
+    Total      REAL    NOT NULL DEFAULT 0,
+    Notes      TEXT,
     FOREIGN KEY (PatientId) REFERENCES Patients(Id)
 );
 
-CREATE TABLE IF NOT EXISTS BillItems (
+CREATE TABLE IF NOT EXISTS InvoiceItems (
     Id          INTEGER PRIMARY KEY AUTOINCREMENT,
-    BillId      INTEGER NOT NULL,
+    InvoiceId   INTEGER NOT NULL,
     Description TEXT    NOT NULL,
     Quantity    INTEGER NOT NULL DEFAULT 1,
     UnitPrice   REAL    NOT NULL DEFAULT 0,
-    FOREIGN KEY (BillId) REFERENCES Bills(Id) ON DELETE CASCADE
+    LineTotal   REAL    NOT NULL DEFAULT 0,
+    FOREIGN KEY (InvoiceId) REFERENCES Invoices(Id) ON DELETE CASCADE
 );
 ";
     }
