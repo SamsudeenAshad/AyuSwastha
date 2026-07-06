@@ -53,7 +53,7 @@ namespace AyuSwastha.Forms
         {
             FormBorderStyle = FormBorderStyle.None;
             StartPosition = FormStartPosition.CenterParent;
-            ClientSize = new Size(760, 500);
+            ClientSize = new Size(860, 520);
             BackColor = Theme.Surface;
 
             Controls.Add(BuildBody());     // fill (added first so it sits under the docked bars)
