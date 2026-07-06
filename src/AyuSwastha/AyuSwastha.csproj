@@ -64,6 +64,7 @@
     <Compile Include="Models\Prescription.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Seed.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\PatientRepository.cs" />
     <Compile Include="Data\DoctorRepository.cs" />
