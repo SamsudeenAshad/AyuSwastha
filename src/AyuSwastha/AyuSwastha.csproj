@@ -97,6 +97,12 @@
     <Compile Include="Forms\PatientsControl.Designer.cs">
       <DependentUpon>PatientsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DoctorsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DoctorsControl.Designer.cs">
+      <DependentUpon>DoctorsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PatientDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
