@@ -48,8 +48,7 @@ namespace AyuSwastha.Forms
                     view = new AppointmentsControl();
                     break;
                 case "therapy":
-                    view = new PlaceholderControl("Therapy Schedule",
-                        "Schedule therapies (Abhyanga, Shirodhara, Panchakarma …) and track sessions.");
+                    view = new TherapiesControl();
                     break;
                 case "prescriptions":
                     view = new PlaceholderControl("Prescriptions",

@@ -115,6 +115,16 @@
     <Compile Include="Forms\AppointmentDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\TherapiesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TherapiesControl.Designer.cs">
+      <DependentUpon>TherapiesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TherapySessionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\TherapySessionRepository.cs" />
     <Compile Include="Forms\PatientDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
