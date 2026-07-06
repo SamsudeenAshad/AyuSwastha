@@ -1,7 +1,6 @@
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
-using System.Windows;
 
 [assembly: AssemblyTitle("AyuSwastha")]
 [assembly: AssemblyDescription("Ayurveda Clinic Management System")]
@@ -13,11 +12,7 @@ using System.Windows;
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
-
-// Where theme dictionaries and generic resources are located.
-[assembly: ThemeInfo(
-    ResourceDictionaryLocation.None,
-    ResourceDictionaryLocation.SourceAssembly)]
+[assembly: Guid("a1b2c3d4-e5f6-4a7b-8c9d-000000000001")]
 
 [assembly: NeutralResourcesLanguage("en-US")]
 
