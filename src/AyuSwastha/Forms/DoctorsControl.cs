@@ -65,16 +65,14 @@ namespace AyuSwastha.Forms
         private void OpenEditor(Doctor doctor)
         {
             int previousId = doctor.Id;
-            // TODO: Implement DoctorDetailForm
-            // using (var dlg = new DoctorDetailForm(doctor))
-            // {
-            //     if (dlg.ShowDialog(this) == DialogResult.OK)
-            //     {
-            //         ReloadList();
-            //         SelectById(doctor.Id != 0 ? doctor.Id : previousId);
-            //     }
-            // }
-            MessageBox.Show("Doctor editor coming soon!");
+            using (var dlg = new DoctorDetailForm(doctor))
+            {
+                if (dlg.ShowDialog(this) == DialogResult.OK)
+                {
+                    ReloadList();
+                    SelectById(doctor.Id != 0 ? doctor.Id : previousId);
+                }
+            }
         }
 
         private void DeleteSelected()
