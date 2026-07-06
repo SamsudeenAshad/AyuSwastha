@@ -114,6 +114,12 @@
     <PackageReference Include="System.Data.SQLite.Core">
       <Version>1.0.118</Version>
     </PackageReference>
+    <PackageReference Include="QuestPDF">
+      <Version>2023.12.6</Version>
+    </PackageReference>
+    <PackageReference Include="LiveCharts.WinForms">
+      <Version>0.9.7.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
