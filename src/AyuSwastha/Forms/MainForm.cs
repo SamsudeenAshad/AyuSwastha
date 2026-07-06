@@ -51,8 +51,7 @@ namespace AyuSwastha.Forms
                     view = new TherapiesControl();
                     break;
                 case "prescriptions":
-                    view = new PlaceholderControl("Prescriptions",
-                        "Issue herbal prescriptions with Dosha-based suggestions.");
+                    view = new PrescriptionsControl();
                     break;
                 case "billing":
                     view = new PlaceholderControl("Billing",
