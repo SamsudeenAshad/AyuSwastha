@@ -103,14 +103,13 @@ namespace AyuSwastha.Forms
 
             var btnSave = new Button
             {
-                Text = "Save",
+                Text = "💾  Save",
                 BackColor = Theme.Primary,
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI Semibold", 9.5f),
-                Size = new Size(84, 32),
-                Anchor = AnchorStyles.Top | AnchorStyles.Right,
-                Location = new Point(ClientSize.Width - 200, 12)
+                Font = new Font("Segoe UI Semibold", 10f),
+                Size = new Size(110, 36),
+                Location = new Point(20, 10)
             };
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.Click += Save_Click;
@@ -121,10 +120,9 @@ namespace AyuSwastha.Forms
                 BackColor = Theme.Surface,
                 ForeColor = Theme.TextPrimary,
                 FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 9.5f),
-                Size = new Size(84, 32),
-                Anchor = AnchorStyles.Top | AnchorStyles.Right,
-                Location = new Point(ClientSize.Width - 104, 12)
+                Font = new Font("Segoe UI", 10f),
+                Size = new Size(90, 36),
+                Location = new Point(140, 10)
             };
             btnCancel.FlatAppearance.BorderColor = Theme.Border;
             btnCancel.Click += (s, e) => { DialogResult = DialogResult.Cancel; Close(); };
