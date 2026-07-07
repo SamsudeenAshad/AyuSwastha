@@ -62,37 +62,34 @@ namespace AyuSwastha.Forms
             //
             // btnNew
             //
-            this.btnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.btnNew.BackColor = Theme.Primary;
             this.btnNew.FlatStyle = FlatStyle.Flat;
             this.btnNew.FlatAppearance.BorderSize = 0;
             this.btnNew.ForeColor = Color.White;
             this.btnNew.Font = new Font("Segoe UI Semibold", 9.5f);
-            this.btnNew.Location = new Point(494, 52);
+            this.btnNew.Location = new Point(380, 52);
             this.btnNew.Size = new Size(96, 34);
             this.btnNew.Text = "+ New";
             this.btnNew.UseVisualStyleBackColor = false;
             //
             // btnEdit
             //
-            this.btnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.btnEdit.FlatStyle = FlatStyle.Flat;
             this.btnEdit.FlatAppearance.BorderColor = Theme.Border;
             this.btnEdit.ForeColor = Theme.TextPrimary;
             this.btnEdit.Font = new Font("Segoe UI", 9.5f);
-            this.btnEdit.Location = new Point(596, 52);
+            this.btnEdit.Location = new Point(482, 52);
             this.btnEdit.Size = new Size(84, 34);
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             //
             // btnDelete
             //
-            this.btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.btnDelete.FlatStyle = FlatStyle.Flat;
             this.btnDelete.FlatAppearance.BorderColor = Theme.Border;
             this.btnDelete.ForeColor = Theme.Danger;
             this.btnDelete.Font = new Font("Segoe UI", 9.5f);
-            this.btnDelete.Location = new Point(686, 52);
+            this.btnDelete.Location = new Point(572, 52);
             this.btnDelete.Size = new Size(84, 34);
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
