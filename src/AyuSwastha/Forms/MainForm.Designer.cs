@@ -113,6 +113,8 @@ namespace AyuSwastha.Forms
             // panelContent
             //
             this.panelContent.BackColor = Theme.Background;
+            this.panelContent.BackgroundImageLayout = ImageLayout.Stretch;
+            try { this.panelContent.BackgroundImage = Image.FromFile(@"Resources\bg_leaf.png"); } catch { }
             this.panelContent.Dock = DockStyle.Fill;
             this.panelContent.Padding = new Padding(16);
             //

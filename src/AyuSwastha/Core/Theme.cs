@@ -10,7 +10,7 @@ namespace AyuSwastha.Core
         public static readonly Color PrimaryDark = ColorTranslator.FromHtml("#134429");
         public static readonly Color Accent = ColorTranslator.FromHtml("#C8A24B");    // herbal gold
         public static readonly Color Surface = ColorTranslator.FromHtml("#FFFFFF");
-        public static readonly Color Background = ColorTranslator.FromHtml("#F3F6F3");
+        public static readonly Color Background = Color.Transparent;
         public static readonly Color SidebarBg = ColorTranslator.FromHtml("#E8F3EB"); // Very light green
         public static readonly Color TextPrimary = ColorTranslator.FromHtml("#1F2A24");
         public static readonly Color TextMuted = ColorTranslator.FromHtml("#6B7A70");
