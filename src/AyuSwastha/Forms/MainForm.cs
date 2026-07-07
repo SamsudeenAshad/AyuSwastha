@@ -79,7 +79,7 @@ namespace AyuSwastha.Forms
 
             if (navButton != null)
             {
-                navButton.BackColor = Theme.Primary;
+                navButton.BackColor = Theme.PrimaryLight;
                 navButton.ForeColor = System.Drawing.Color.White;
                 navButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5f);
             }
