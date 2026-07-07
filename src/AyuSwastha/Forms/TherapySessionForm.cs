@@ -169,9 +169,13 @@ namespace AyuSwastha.Forms
         private void Populate()
         {
             if (_session.TherapyId > 0) cmbTherapy.SelectedValue = _session.TherapyId;
+            else if (cmbTherapy.Items.Count > 0) cmbTherapy.SelectedIndex = 0;
+
             if (_session.PatientId > 0) cmbPatient.SelectedValue = _session.PatientId;
+            else if (cmbPatient.Items.Count > 0) cmbPatient.SelectedIndex = 0;
+
             if (_session.DoctorId > 0) cmbDoctor.SelectedValue = _session.DoctorId;
-            else cmbDoctor.SelectedIndex = 0; // None
+            else if (cmbDoctor.Items.Count > 0) cmbDoctor.SelectedIndex = 0; // None
             
             dtpDate.Value = _session.ScheduledAt.Date;
             dtpTime.Value = _session.ScheduledAt;
