@@ -14,6 +14,9 @@ namespace AyuSwastha.Forms
         private Label lblFeatureTitle;
         private Label lblFeatureBody;
         private Panel featureCard;
+        private Label lblTherapiesTitle;
+        private Label lblTherapiesBody;
+        private Panel therapiesCard;
 
         protected override void Dispose(bool disposing)
         {
@@ -29,6 +32,9 @@ namespace AyuSwastha.Forms
             this.featureCard = new Panel();
             this.lblFeatureTitle = new Label();
             this.lblFeatureBody = new Label();
+            this.therapiesCard = new Panel();
+            this.lblTherapiesTitle = new Label();
+            this.lblTherapiesBody = new Label();
             this.SuspendLayout();
             //
             // lblHeading
@@ -83,9 +89,40 @@ namespace AyuSwastha.Forms
                 "suitable herbs, therapies, and diet/lifestyle guidance — turning records into " +
                 "decision support. Open a patient to see it in action.";
             //
+            // therapiesCard
+            //
+            this.therapiesCard.BackColor = Theme.Surface;
+            this.therapiesCard.BorderStyle = BorderStyle.FixedSingle;
+            this.therapiesCard.Location = new Point(8, 415);
+            this.therapiesCard.Size = new Size(700, 180);
+            this.therapiesCard.Controls.Add(this.lblTherapiesTitle);
+            this.therapiesCard.Controls.Add(this.lblTherapiesBody);
+            //
+            // lblTherapiesTitle
+            //
+            this.lblTherapiesTitle.AutoSize = true;
+            this.lblTherapiesTitle.Font = Theme.Subheading;
+            this.lblTherapiesTitle.ForeColor = Theme.Primary;
+            this.lblTherapiesTitle.Location = new Point(18, 16);
+            this.lblTherapiesTitle.Text = "Core Ayurvedic Therapies";
+            //
+            // lblTherapiesBody
+            //
+            this.lblTherapiesBody.AutoSize = false;
+            this.lblTherapiesBody.Font = Theme.Body;
+            this.lblTherapiesBody.ForeColor = Theme.TextMuted;
+            this.lblTherapiesBody.Location = new Point(20, 48);
+            this.lblTherapiesBody.Size = new Size(660, 120);
+            this.lblTherapiesBody.Text =
+                "• Abhyanga: Full-body warm oil massage to pacify Vata and nourish tissues.\n\n" +
+                "• Shirodhara: Continuous pouring of warm oil on the forehead for deep relaxation.\n\n" +
+                "• Basti: Herbal enema treatment, highly effective for Vata disorders.\n\n" +
+                "• Udvartana: Dry herbal powder massage to reduce Kapha and improve circulation.";
+            //
             // DashboardControl
             //
             this.BackColor = Theme.Background;
+            this.Controls.Add(this.therapiesCard);
             this.Controls.Add(this.featureCard);
             this.Controls.Add(this.flowTiles);
             this.Controls.Add(this.lblSub);

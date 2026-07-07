@@ -120,6 +120,8 @@ namespace AyuSwastha.Forms
         {
             var body = new Panel { Dock = DockStyle.Fill, BackColor = Theme.Surface, Padding = new Padding(20) };
 
+            txtDoshaGuidance = new TextBox { Width = 300, Height = 170, Multiline = true, ReadOnly = true, Font = new Font("Segoe UI", 9f), BackColor = Theme.Background, ScrollBars = ScrollBars.Vertical };
+
             cmbPatient = new ComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Width = 260, Font = Theme.Body, DisplayMember = "FullName", ValueMember = "Id" };
             cmbDoctor = new ComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Width = 260, Font = Theme.Body, DisplayMember = "FullName", ValueMember = "Id" };
             cmbPatient.SelectedIndexChanged += (s, e) => UpdateDoshaGuidance();
@@ -131,8 +133,6 @@ namespace AyuSwastha.Forms
 
             dtpIssuedOn = new DateTimePicker { Width = 150, Format = DateTimePickerFormat.Short, Font = Theme.Body };
             txtGeneralInstructions = new TextBox { Width = 260, Multiline = true, Height = 60, Font = Theme.Body, ScrollBars = ScrollBars.Vertical };
-            
-            txtDoshaGuidance = new TextBox { Width = 300, Height = 170, Multiline = true, ReadOnly = true, Font = new Font("Segoe UI", 9f), BackColor = Theme.Background, ScrollBars = ScrollBars.Vertical };
 
             int y = 20;
             AddRow(body, "Patient", cmbPatient, ref y);
