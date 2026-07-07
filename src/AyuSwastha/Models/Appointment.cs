@@ -15,6 +15,8 @@ namespace AyuSwastha.Models
         public string PatientName { get; set; }
         public string DoctorName { get; set; }
 
+        public string AppointmentCode => $"APT-{Id:D4}";
+
         public override string ToString()
         {
             string pName = string.IsNullOrEmpty(PatientName) ? $"Patient #{PatientId}" : PatientName;

@@ -16,6 +16,8 @@ namespace AyuSwastha.Models
         public string Notes { get; set; }
         public string PatientName { get; set; }
 
+        public string InvoiceCode => $"INV-{Id:D4}";
+
         public List<InvoiceItem> Items { get; } = new List<InvoiceItem>();
 
         public override string ToString()

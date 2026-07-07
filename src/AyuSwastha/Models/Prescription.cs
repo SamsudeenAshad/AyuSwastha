@@ -19,6 +19,8 @@ namespace AyuSwastha.Models
         public string PatientName { get; set; }
         public string DoctorName { get; set; }
 
+        public string PrescriptionCode => $"PRX-{Id:D4}";
+
         public List<PrescriptionItem> Items { get; } = new List<PrescriptionItem>();
 
         public void AddItem(PrescriptionItem item)

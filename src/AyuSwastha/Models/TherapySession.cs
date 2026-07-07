@@ -13,6 +13,8 @@ namespace AyuSwastha.Models
         public TherapyStatus Status { get; set; } = TherapyStatus.Booked;
         public string Notes { get; set; }
 
+        public string TherapySessionCode => $"THR-{Id:D4}";
+
         // Display helpers populated via joins.
         public string TherapyName { get; set; }
         public string PatientName { get; set; }

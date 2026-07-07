@@ -24,7 +24,8 @@ namespace AyuSwastha.Forms
             lstDoctors.DoubleClick += (s, e) => EditSelected();
 
             lstDoctors.AutoGenerateColumns = false;
-            lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "LicenseNumber", HeaderText = "License No.", Width = 100 });
+            lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DoctorCode", HeaderText = "ID", Width = 80 });
+            lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "LicenseNo", HeaderText = "License No.", Width = 100 });
             lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "FullName", HeaderText = "Doctor Name", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Specialization", HeaderText = "Specialization", Width = 150 });
             lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Phone", HeaderText = "Phone", Width = 120 });
