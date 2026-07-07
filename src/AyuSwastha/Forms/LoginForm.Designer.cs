@@ -9,6 +9,7 @@ namespace AyuSwastha.Forms
         private System.ComponentModel.IContainer components = null;
 
         private Panel panelHeader;
+        private PictureBox picLogo;
         private Label lblTitle;
         private Label lblSubtitle;
         private Label lblUser;
@@ -29,6 +30,7 @@ namespace AyuSwastha.Forms
         private void InitializeComponent()
         {
             this.panelHeader = new Panel();
+            this.picLogo = new PictureBox();
             this.lblTitle = new Label();
             this.lblSubtitle = new Label();
             this.lblUser = new Label();
@@ -46,15 +48,23 @@ namespace AyuSwastha.Forms
             this.panelHeader.BackColor = Theme.Primary;
             this.panelHeader.Dock = DockStyle.Top;
             this.panelHeader.Height = 96;
+            this.panelHeader.Controls.Add(this.picLogo);
             this.panelHeader.Controls.Add(this.lblTitle);
             this.panelHeader.Controls.Add(this.lblSubtitle);
+            //
+            // picLogo
+            //
+            this.picLogo.Location = new Point(24, 20);
+            this.picLogo.Size = new Size(56, 56);
+            this.picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            try { this.picLogo.Image = Image.FromFile(@"Resources\logo.png"); } catch { }
             //
             // lblTitle
             //
             this.lblTitle.AutoSize = true;
             this.lblTitle.ForeColor = Color.White;
             this.lblTitle.Font = new Font("Segoe UI Semibold", 22f, FontStyle.Bold);
-            this.lblTitle.Location = new Point(28, 20);
+            this.lblTitle.Location = new Point(88, 20);
             this.lblTitle.Text = "AyuSwastha";
             //
             // lblSubtitle
@@ -62,7 +72,7 @@ namespace AyuSwastha.Forms
             this.lblSubtitle.AutoSize = true;
             this.lblSubtitle.ForeColor = Color.FromArgb(220, 235, 225);
             this.lblSubtitle.Font = new Font("Segoe UI", 10f);
-            this.lblSubtitle.Location = new Point(30, 62);
+            this.lblSubtitle.Location = new Point(92, 62);
             this.lblSubtitle.Text = "Ayurveda Clinic Management System";
             //
             // lblUser

@@ -10,6 +10,7 @@ namespace AyuSwastha.Forms
 
         private Panel panelTop;
         private Label lblAppTitle;
+        private PictureBox picLogo;
         private Label lblUser;
         private Button btnLogout;
         private Panel panelNav;
@@ -33,6 +34,7 @@ namespace AyuSwastha.Forms
         {
             this.panelTop = new Panel();
             this.lblAppTitle = new Label();
+            this.picLogo = new PictureBox();
             this.lblUser = new Label();
             this.btnLogout = new Button();
             this.panelNav = new Panel();
@@ -51,16 +53,24 @@ namespace AyuSwastha.Forms
             this.panelTop.BackColor = Theme.Primary;
             this.panelTop.Dock = DockStyle.Top;
             this.panelTop.Height = 56;
+            this.panelTop.Controls.Add(this.picLogo);
             this.panelTop.Controls.Add(this.lblAppTitle);
             this.panelTop.Controls.Add(this.lblUser);
             this.panelTop.Controls.Add(this.btnLogout);
+            //
+            // picLogo
+            //
+            this.picLogo.Location = new Point(16, 8);
+            this.picLogo.Size = new Size(40, 40);
+            this.picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            try { this.picLogo.Image = Image.FromFile(@"Resources\logo.png"); } catch { }
             //
             // lblAppTitle
             //
             this.lblAppTitle.AutoSize = true;
             this.lblAppTitle.ForeColor = Color.White;
             this.lblAppTitle.Font = new Font("Segoe UI Semibold", 15f, FontStyle.Bold);
-            this.lblAppTitle.Location = new Point(20, 13);
+            this.lblAppTitle.Location = new Point(64, 13);
             this.lblAppTitle.Text = "AyuSwastha";
             //
             // lblUser
