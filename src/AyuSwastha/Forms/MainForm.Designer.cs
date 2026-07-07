@@ -65,25 +65,25 @@ namespace AyuSwastha.Forms
             //
             // lblUser
             //
-            this.lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            this.lblUser.Dock = DockStyle.Right;
             this.lblUser.AutoSize = false;
             this.lblUser.TextAlign = ContentAlignment.MiddleRight;
             this.lblUser.ForeColor = Color.FromArgb(225, 240, 230);
             this.lblUser.Font = Theme.Body;
-            this.lblUser.Location = new Point(560, 18);
-            this.lblUser.Size = new Size(300, 20);
+            this.lblUser.Padding = new Padding(0, 0, 20, 0); // Spacing from button
+            this.lblUser.Size = new Size(300, 56);
             this.lblUser.Text = "";
             //
             // btnLogout
             //
-            this.btnLogout.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            this.btnLogout.Dock = DockStyle.Right;
             this.btnLogout.FlatStyle = FlatStyle.Flat;
             this.btnLogout.FlatAppearance.BorderColor = Color.FromArgb(120, 170, 145);
             this.btnLogout.ForeColor = Color.White;
             this.btnLogout.Font = Theme.Body;
-            this.btnLogout.Location = new Point(872, 12);
-            this.btnLogout.Size = new Size(90, 32);
+            this.btnLogout.Size = new Size(90, 56);
             this.btnLogout.Text = "Logout";
+            this.btnLogout.Cursor = Cursors.Hand;
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += this.btnLogout_Click;
             //
