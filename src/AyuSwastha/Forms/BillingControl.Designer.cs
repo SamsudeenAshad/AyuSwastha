@@ -15,7 +15,7 @@ namespace AyuSwastha.Forms
         private Button btnEdit;
         private Button btnDelete;
         private Panel panelListHost;
-        private ListBox lstInvoices;
+        private DataGridView lstInvoices;
 
         protected override void Dispose(bool disposing)
         {
@@ -32,7 +32,7 @@ namespace AyuSwastha.Forms
             this.btnEdit = new Button();
             this.btnDelete = new Button();
             this.panelListHost = new Panel();
-            this.lstInvoices = new ListBox();
+            this.lstInvoices = new DataGridView();
             this.SuspendLayout();
             //
             // panelHeader
@@ -106,8 +106,14 @@ namespace AyuSwastha.Forms
             this.lstInvoices.BorderStyle = BorderStyle.FixedSingle;
             this.lstInvoices.Dock = DockStyle.Fill;
             this.lstInvoices.Font = new Font("Segoe UI", 10.5f);
-            this.lstInvoices.IntegralHeight = false;
-            this.lstInvoices.ItemHeight = 24;
+            this.lstInvoices.BackgroundColor = Theme.Surface;
+            this.lstInvoices.ReadOnly = true;
+            this.lstInvoices.AllowUserToAddRows = false;
+            this.lstInvoices.AllowUserToDeleteRows = false;
+            this.lstInvoices.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.lstInvoices.RowHeadersVisible = false;
+            this.lstInvoices.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.lstInvoices.MultiSelect = false;
             //
             // BillingControl
             //

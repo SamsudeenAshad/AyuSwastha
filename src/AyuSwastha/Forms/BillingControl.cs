@@ -22,6 +22,13 @@ namespace AyuSwastha.Forms
             btnEdit.Click += (s, e) => EditSelected();
             btnDelete.Click += (s, e) => DeleteSelected();
             lstInvoices.DoubleClick += (s, e) => EditSelected();
+
+            lstInvoices.AutoGenerateColumns = false;
+            lstInvoices.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "InvoiceCode", HeaderText = "Invoice Code", Width = 120 });
+            lstInvoices.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PatientName", HeaderText = "Patient", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            lstInvoices.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TotalAmount", HeaderText = "Amount", Width = 120, DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" } });
+            lstInvoices.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "IssuedAt", HeaderText = "Date", Width = 120, DefaultCellStyle = new DataGridViewCellStyle { Format = "d" } });
+            lstInvoices.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Status", HeaderText = "Status", Width = 100 });
         }
 
         private void BillingControl_Load(object sender, EventArgs e)
@@ -57,7 +64,7 @@ namespace AyuSwastha.Forms
 
         private void EditSelected()
         {
-            if (lstInvoices.SelectedItem is Invoice i)
+            if (lstInvoices.CurrentRow?.DataBoundItem is Invoice i)
                 OpenEditor(i);
         }
 
@@ -76,7 +83,7 @@ namespace AyuSwastha.Forms
 
         private void DeleteSelected()
         {
-            if (!(lstInvoices.SelectedItem is Invoice i) || i.Id == 0)
+            if (!(lstInvoices.CurrentRow?.DataBoundItem is Invoice i) || i.Id == 0)
                 return;
 
             if (MessageBox.Show("Delete invoice for " + i.PatientName + "?", "Confirm",
@@ -96,11 +103,12 @@ namespace AyuSwastha.Forms
 
         private void SelectById(int id)
         {
-            for (int i = 0; i < lstInvoices.Items.Count; i++)
+            foreach (DataGridViewRow row in lstInvoices.Rows)
             {
-                if (lstInvoices.Items[i] is Invoice inv && inv.Id == id)
+                if (row.DataBoundItem is Invoice inv && inv.Id == id)
                 {
-                    lstInvoices.SelectedIndex = i;
+                    row.Selected = true;
+                    lstInvoices.CurrentCell = row.Cells[0];
                     return;
                 }
             }

@@ -15,7 +15,7 @@ namespace AyuSwastha.Forms
         private Button btnEdit;
         private Button btnDelete;
         private Panel panelListHost;
-        private ListBox lstAppointments;
+        private DataGridView lstAppointments;
 
         protected override void Dispose(bool disposing)
         {
@@ -32,7 +32,7 @@ namespace AyuSwastha.Forms
             this.btnEdit = new Button();
             this.btnDelete = new Button();
             this.panelListHost = new Panel();
-            this.lstAppointments = new ListBox();
+            this.lstAppointments = new DataGridView();
             this.SuspendLayout();
             //
             // panelHeader
@@ -106,8 +106,14 @@ namespace AyuSwastha.Forms
             this.lstAppointments.BorderStyle = BorderStyle.FixedSingle;
             this.lstAppointments.Dock = DockStyle.Fill;
             this.lstAppointments.Font = new Font("Segoe UI", 10.5f);
-            this.lstAppointments.IntegralHeight = false;
-            this.lstAppointments.ItemHeight = 24;
+            this.lstAppointments.BackgroundColor = Theme.Surface;
+            this.lstAppointments.ReadOnly = true;
+            this.lstAppointments.AllowUserToAddRows = false;
+            this.lstAppointments.AllowUserToDeleteRows = false;
+            this.lstAppointments.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.lstAppointments.RowHeadersVisible = false;
+            this.lstAppointments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.lstAppointments.MultiSelect = false;
             //
             // AppointmentsControl
             //

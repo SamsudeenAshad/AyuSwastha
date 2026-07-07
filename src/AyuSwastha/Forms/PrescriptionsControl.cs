@@ -22,6 +22,12 @@ namespace AyuSwastha.Forms
             btnEdit.Click += (s, e) => EditSelected();
             btnDelete.Click += (s, e) => DeleteSelected();
             lstPrescriptions.DoubleClick += (s, e) => EditSelected();
+
+            lstPrescriptions.AutoGenerateColumns = false;
+            lstPrescriptions.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PrescriptionCode", HeaderText = "ID", Width = 80 });
+            lstPrescriptions.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PatientName", HeaderText = "Patient Name", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            lstPrescriptions.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DoctorName", HeaderText = "Doctor", Width = 150 });
+            lstPrescriptions.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "IssuedOn", HeaderText = "Date", Width = 100, DefaultCellStyle = new DataGridViewCellStyle { Format = "d" } });
         }
 
         private void PrescriptionsControl_Load(object sender, EventArgs e)
@@ -57,7 +63,7 @@ namespace AyuSwastha.Forms
 
         private void EditSelected()
         {
-            if (lstPrescriptions.SelectedItem is Prescription p)
+            if (lstPrescriptions.CurrentRow?.DataBoundItem is Prescription p)
                 OpenEditor(p);
         }
 
@@ -76,7 +82,7 @@ namespace AyuSwastha.Forms
 
         private void DeleteSelected()
         {
-            if (!(lstPrescriptions.SelectedItem is Prescription p) || p.Id == 0)
+            if (!(lstPrescriptions.CurrentRow?.DataBoundItem is Prescription p) || p.Id == 0)
                 return;
 
             if (MessageBox.Show("Delete prescription for " + p.PatientName + "?", "Confirm",
@@ -96,11 +102,12 @@ namespace AyuSwastha.Forms
 
         private void SelectById(int id)
         {
-            for (int i = 0; i < lstPrescriptions.Items.Count; i++)
+            foreach (DataGridViewRow row in lstPrescriptions.Rows)
             {
-                if (lstPrescriptions.Items[i] is Prescription p && p.Id == id)
+                if (row.DataBoundItem is Prescription p && p.Id == id)
                 {
-                    lstPrescriptions.SelectedIndex = i;
+                    row.Selected = true;
+                    lstPrescriptions.CurrentCell = row.Cells[0];
                     return;
                 }
             }

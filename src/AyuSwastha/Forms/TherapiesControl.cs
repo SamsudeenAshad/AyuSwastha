@@ -22,6 +22,13 @@ namespace AyuSwastha.Forms
             btnEdit.Click += (s, e) => EditSelected();
             btnDelete.Click += (s, e) => DeleteSelected();
             lstTherapies.DoubleClick += (s, e) => EditSelected();
+
+            lstTherapies.AutoGenerateColumns = false;
+            lstTherapies.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TherapySessionCode", HeaderText = "ID", Width = 80 });
+            lstTherapies.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PatientName", HeaderText = "Patient Name", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            lstTherapies.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TherapyName", HeaderText = "Therapy", Width = 150 });
+            lstTherapies.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "ScheduledAt", HeaderText = "Scheduled At", Width = 150, DefaultCellStyle = new DataGridViewCellStyle { Format = "g" } });
+            lstTherapies.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Status", HeaderText = "Status", Width = 100 });
         }
 
         private void TherapiesControl_Load(object sender, EventArgs e)
@@ -58,7 +65,7 @@ namespace AyuSwastha.Forms
 
         private void EditSelected()
         {
-            if (lstTherapies.SelectedItem is TherapySession s)
+            if (lstTherapies.CurrentRow?.DataBoundItem is TherapySession s)
                 OpenEditor(s);
         }
 
@@ -77,7 +84,7 @@ namespace AyuSwastha.Forms
 
         private void DeleteSelected()
         {
-            if (!(lstTherapies.SelectedItem is TherapySession s) || s.Id == 0)
+            if (!(lstTherapies.CurrentRow?.DataBoundItem is TherapySession s) || s.Id == 0)
                 return;
 
             if (MessageBox.Show("Delete therapy session for " + s.PatientName + "?", "Confirm",
@@ -97,11 +104,12 @@ namespace AyuSwastha.Forms
 
         private void SelectById(int id)
         {
-            for (int i = 0; i < lstTherapies.Items.Count; i++)
+            foreach (DataGridViewRow row in lstTherapies.Rows)
             {
-                if (lstTherapies.Items[i] is TherapySession s && s.Id == id)
+                if (row.DataBoundItem is TherapySession s && s.Id == id)
                 {
-                    lstTherapies.SelectedIndex = i;
+                    row.Selected = true;
+                    lstTherapies.CurrentCell = row.Cells[0];
                     return;
                 }
             }

@@ -22,6 +22,13 @@ namespace AyuSwastha.Forms
             btnEdit.Click += (s, e) => EditSelected();
             btnDelete.Click += (s, e) => DeleteSelected();
             lstAppointments.DoubleClick += (s, e) => EditSelected();
+
+            lstAppointments.AutoGenerateColumns = false;
+            lstAppointments.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "AppointmentCode", HeaderText = "ID", Width = 80 });
+            lstAppointments.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PatientName", HeaderText = "Patient Name", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            lstAppointments.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DoctorName", HeaderText = "Doctor", Width = 150 });
+            lstAppointments.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "AppointmentDate", HeaderText = "Scheduled At", Width = 150, DefaultCellStyle = new DataGridViewCellStyle { Format = "g" } });
+            lstAppointments.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Status", HeaderText = "Status", Width = 100 });
         }
 
         private void AppointmentsControl_Load(object sender, EventArgs e)
@@ -58,7 +65,7 @@ namespace AyuSwastha.Forms
 
         private void EditSelected()
         {
-            if (lstAppointments.SelectedItem is Appointment a)
+            if (lstAppointments.CurrentRow?.DataBoundItem is Appointment a)
                 OpenEditor(a);
         }
 
@@ -77,7 +84,7 @@ namespace AyuSwastha.Forms
 
         private void DeleteSelected()
         {
-            if (!(lstAppointments.SelectedItem is Appointment a) || a.Id == 0)
+            if (!(lstAppointments.CurrentRow?.DataBoundItem is Appointment a) || a.Id == 0)
                 return;
 
             if (MessageBox.Show("Delete appointment for " + a.PatientName + "?", "Confirm",
@@ -97,11 +104,12 @@ namespace AyuSwastha.Forms
 
         private void SelectById(int id)
         {
-            for (int i = 0; i < lstAppointments.Items.Count; i++)
+            foreach (DataGridViewRow row in lstAppointments.Rows)
             {
-                if (lstAppointments.Items[i] is Appointment a && a.Id == id)
+                if (row.DataBoundItem is Appointment a && a.Id == id)
                 {
-                    lstAppointments.SelectedIndex = i;
+                    row.Selected = true;
+                    lstAppointments.CurrentCell = row.Cells[0];
                     return;
                 }
             }

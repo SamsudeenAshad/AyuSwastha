@@ -22,6 +22,14 @@ namespace AyuSwastha.Forms
             btnEdit.Click += (s, e) => EditSelected();
             btnDelete.Click += (s, e) => DeleteSelected();
             lstPatients.DoubleClick += (s, e) => EditSelected();
+
+            lstPatients.AutoGenerateColumns = false;
+            lstPatients.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PatientCode", HeaderText = "ID", Width = 80 });
+            lstPatients.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "FullName", HeaderText = "Patient Name", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            lstPatients.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Gender", HeaderText = "Gender", Width = 100 });
+            lstPatients.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Age", HeaderText = "Age", Width = 80 });
+            lstPatients.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Prakriti", HeaderText = "Dosha (Prakriti)", Width = 120 });
+            lstPatients.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Phone", HeaderText = "Phone", Width = 120 });
         }
 
         private void PatientsControl_Load(object sender, EventArgs e)
@@ -58,7 +66,7 @@ namespace AyuSwastha.Forms
 
         private void EditSelected()
         {
-            if (lstPatients.SelectedItem is Patient p)
+            if (lstPatients.CurrentRow?.DataBoundItem is Patient p)
                 OpenEditor(p);
         }
 
@@ -77,7 +85,7 @@ namespace AyuSwastha.Forms
 
         private void DeleteSelected()
         {
-            if (!(lstPatients.SelectedItem is Patient p) || p.Id == 0)
+            if (!(lstPatients.CurrentRow?.DataBoundItem is Patient p) || p.Id == 0)
                 return;
 
             if (MessageBox.Show("Delete " + p.FullName + "?", "Confirm",
@@ -97,11 +105,12 @@ namespace AyuSwastha.Forms
 
         private void SelectById(int id)
         {
-            for (int i = 0; i < lstPatients.Items.Count; i++)
+            foreach (DataGridViewRow row in lstPatients.Rows)
             {
-                if (lstPatients.Items[i] is Patient p && p.Id == id)
+                if (row.DataBoundItem is Patient p && p.Id == id)
                 {
-                    lstPatients.SelectedIndex = i;
+                    row.Selected = true;
+                    lstPatients.CurrentCell = row.Cells[0];
                     return;
                 }
             }

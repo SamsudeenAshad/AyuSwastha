@@ -15,7 +15,7 @@ namespace AyuSwastha.Forms
         private Button btnEdit;
         private Button btnDelete;
         private Panel panelListHost;
-        private ListBox lstTherapies;
+        private DataGridView lstTherapies;
 
         protected override void Dispose(bool disposing)
         {
@@ -32,7 +32,7 @@ namespace AyuSwastha.Forms
             this.btnEdit = new Button();
             this.btnDelete = new Button();
             this.panelListHost = new Panel();
-            this.lstTherapies = new ListBox();
+            this.lstTherapies = new DataGridView();
             this.SuspendLayout();
             //
             // panelHeader
@@ -106,8 +106,14 @@ namespace AyuSwastha.Forms
             this.lstTherapies.BorderStyle = BorderStyle.FixedSingle;
             this.lstTherapies.Dock = DockStyle.Fill;
             this.lstTherapies.Font = new Font("Segoe UI", 10.5f);
-            this.lstTherapies.IntegralHeight = false;
-            this.lstTherapies.ItemHeight = 24;
+            this.lstTherapies.BackgroundColor = Theme.Surface;
+            this.lstTherapies.ReadOnly = true;
+            this.lstTherapies.AllowUserToAddRows = false;
+            this.lstTherapies.AllowUserToDeleteRows = false;
+            this.lstTherapies.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.lstTherapies.RowHeadersVisible = false;
+            this.lstTherapies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.lstTherapies.MultiSelect = false;
             //
             // TherapiesControl
             //

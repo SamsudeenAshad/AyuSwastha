@@ -22,6 +22,12 @@ namespace AyuSwastha.Forms
             btnEdit.Click += (s, e) => EditSelected();
             btnDelete.Click += (s, e) => DeleteSelected();
             lstDoctors.DoubleClick += (s, e) => EditSelected();
+
+            lstDoctors.AutoGenerateColumns = false;
+            lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "LicenseNumber", HeaderText = "License No.", Width = 100 });
+            lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "FullName", HeaderText = "Doctor Name", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Specialization", HeaderText = "Specialization", Width = 150 });
+            lstDoctors.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Phone", HeaderText = "Phone", Width = 120 });
         }
 
         private void DoctorsControl_Load(object sender, EventArgs e)
@@ -58,7 +64,7 @@ namespace AyuSwastha.Forms
 
         private void EditSelected()
         {
-            if (lstDoctors.SelectedItem is Doctor p)
+            if (lstDoctors.CurrentRow?.DataBoundItem is Doctor p)
                 OpenEditor(p);
         }
 
@@ -77,7 +83,7 @@ namespace AyuSwastha.Forms
 
         private void DeleteSelected()
         {
-            if (!(lstDoctors.SelectedItem is Doctor p) || p.Id == 0)
+            if (!(lstDoctors.CurrentRow?.DataBoundItem is Doctor p) || p.Id == 0)
                 return;
 
             if (MessageBox.Show("Delete " + p.FullName + "?", "Confirm",
@@ -97,11 +103,12 @@ namespace AyuSwastha.Forms
 
         private void SelectById(int id)
         {
-            for (int i = 0; i < lstDoctors.Items.Count; i++)
+            foreach (DataGridViewRow row in lstDoctors.Rows)
             {
-                if (lstDoctors.Items[i] is Doctor p && p.Id == id)
+                if (row.DataBoundItem is Doctor p && p.Id == id)
                 {
-                    lstDoctors.SelectedIndex = i;
+                    row.Selected = true;
+                    lstDoctors.CurrentCell = row.Cells[0];
                     return;
                 }
             }
