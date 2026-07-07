@@ -93,64 +93,64 @@
     <Compile Include="Forms\DashboardControl.Designer.cs">
       <DependentUpon>DashboardControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PatientsControl.cs">
+    <Compile Include="Forms\Patients\PatientsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\PatientsControl.Designer.cs">
+    <Compile Include="Forms\Patients\PatientsControl.Designer.cs">
       <DependentUpon>PatientsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DoctorsControl.cs">
+    <Compile Include="Forms\Doctors\DoctorsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\DoctorsControl.Designer.cs">
+    <Compile Include="Forms\Doctors\DoctorsControl.Designer.cs">
       <DependentUpon>DoctorsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DoctorDetailForm.cs">
+    <Compile Include="Forms\Doctors\DoctorDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AppointmentsControl.cs">
+    <Compile Include="Forms\Appointments\AppointmentsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\AppointmentsControl.Designer.cs">
+    <Compile Include="Forms\Appointments\AppointmentsControl.Designer.cs">
       <DependentUpon>AppointmentsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AppointmentDetailForm.cs">
+    <Compile Include="Forms\Appointments\AppointmentDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TherapiesControl.cs">
+    <Compile Include="Forms\Therapies\TherapiesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\TherapiesControl.Designer.cs">
+    <Compile Include="Forms\Therapies\TherapiesControl.Designer.cs">
       <DependentUpon>TherapiesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TherapySessionForm.cs">
+    <Compile Include="Forms\Therapies\TherapySessionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PrescriptionsControl.cs">
+    <Compile Include="Forms\Prescriptions\PrescriptionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\PrescriptionsControl.Designer.cs">
+    <Compile Include="Forms\Prescriptions\PrescriptionsControl.Designer.cs">
       <DependentUpon>PrescriptionsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PrescriptionDetailForm.cs">
+    <Compile Include="Forms\Prescriptions\PrescriptionDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PrakritiQuestionnaireForm.cs">
+    <Compile Include="Forms\Patients\PrakritiQuestionnaireForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BillingControl.cs">
+    <Compile Include="Forms\Billing\BillingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\BillingControl.Designer.cs">
+    <Compile Include="Forms\Billing\BillingControl.Designer.cs">
       <DependentUpon>BillingControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InvoiceDetailForm.cs">
+    <Compile Include="Forms\Billing\InvoiceDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Data\TherapySessionRepository.cs" />
     <Compile Include="Data\PrescriptionRepository.cs" />
     <Compile Include="Data\InvoiceRepository.cs" />
-    <Compile Include="Forms\PatientDetailForm.cs">
+    <Compile Include="Forms\Patients\PatientDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\PlaceholderControl.cs">
