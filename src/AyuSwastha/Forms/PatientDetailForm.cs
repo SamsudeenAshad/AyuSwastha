@@ -250,6 +250,13 @@ namespace AyuSwastha.Forms
             txtPhone = MakeText(width: 200);
             txtAddress = MakeText(width: 260, multiline: true, height: 56);
             cmbPrakriti = MakeCombo(typeof(DoshaType), 200);
+            if (txtRec == null) {
+                txtRec = new TextBox
+                {
+                    Dock = DockStyle.Fill, Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical,
+                    Font = Theme.Body, BorderStyle = BorderStyle.FixedSingle, BackColor = Theme.Surface
+                };
+            }
             cmbPrakriti.SelectedIndexChanged += (s, e) => UpdateRecommendation();
             lblAgeValue = new Label { AutoSize = true, Font = new Font("Segoe UI Semibold", 9.75f), ForeColor = Theme.TextPrimary };
 
@@ -291,11 +298,13 @@ namespace AyuSwastha.Forms
                 Dock = DockStyle.Top, Height = 30, Text = "Ayurvedic guidance for the selected Prakriti",
                 Font = Theme.Subheading, ForeColor = Theme.Primary
             };
-            txtRec = new TextBox
-            {
-                Dock = DockStyle.Fill, Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical,
-                Font = Theme.Body, BorderStyle = BorderStyle.FixedSingle, BackColor = Theme.Surface
-            };
+            if (txtRec == null) {
+                txtRec = new TextBox
+                {
+                    Dock = DockStyle.Fill, Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical,
+                    Font = Theme.Body, BorderStyle = BorderStyle.FixedSingle, BackColor = Theme.Surface
+                };
+            }
             page.Controls.Add(txtRec);
             page.Controls.Add(lbl);
             return page;
