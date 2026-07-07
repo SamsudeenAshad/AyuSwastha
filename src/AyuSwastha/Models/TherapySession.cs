@@ -17,5 +17,12 @@ namespace AyuSwastha.Models
         public string TherapyName { get; set; }
         public string PatientName { get; set; }
         public string DoctorName { get; set; }
+
+        public override string ToString()
+        {
+            string pName = string.IsNullOrEmpty(PatientName) ? $"Patient #{PatientId}" : PatientName;
+            string tName = string.IsNullOrEmpty(TherapyName) ? $"Therapy #{TherapyId}" : TherapyName;
+            return $"THR-{Id:D4} | {pName} - {tName}";
+        }
     }
 }

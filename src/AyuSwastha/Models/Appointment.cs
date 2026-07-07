@@ -14,5 +14,11 @@ namespace AyuSwastha.Models
         // Populated by joins for display convenience (not persisted directly).
         public string PatientName { get; set; }
         public string DoctorName { get; set; }
+
+        public override string ToString()
+        {
+            string pName = string.IsNullOrEmpty(PatientName) ? $"Patient #{PatientId}" : PatientName;
+            return $"APT-{Id:D4} | {pName} - {ScheduledAt:MMM dd, HH:mm}";
+        }
     }
 }

@@ -26,6 +26,12 @@ namespace AyuSwastha.Models
             if (item == null) throw new ArgumentNullException(nameof(item));
             Items.Add(item);
         }
+
+        public override string ToString()
+        {
+            string pName = string.IsNullOrEmpty(PatientName) ? $"Patient #{PatientId}" : PatientName;
+            return $"PRX-{Id:D4} | {pName} - {IssuedOn:MMM dd}";
+        }
     }
 
     /// <summary>A single herbal medicine line within a prescription.</summary>

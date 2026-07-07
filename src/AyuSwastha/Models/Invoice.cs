@@ -17,6 +17,12 @@ namespace AyuSwastha.Models
         public string PatientName { get; set; }
 
         public List<InvoiceItem> Items { get; } = new List<InvoiceItem>();
+
+        public override string ToString()
+        {
+            string pName = string.IsNullOrEmpty(PatientName) ? $"Patient #{PatientId}" : PatientName;
+            return $"INV-{Id:D4} | {pName} - {Total:C2} ({Status})";
+        }
     }
 
     public class InvoiceItem
