@@ -65,7 +65,6 @@ namespace AyuSwastha.Forms
             }
 
             view.Dock = DockStyle.Fill;
-            view.BackColor = System.Drawing.Color.Transparent;
             panelContent.Controls.Add(view);
         }
 
